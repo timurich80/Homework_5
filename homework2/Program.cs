@@ -4,47 +4,41 @@
 [3, 7, 23, 12] -> 19
 [-4, -6, 89, 6] -> 0 
 */
+Console.Clear();
+System.Console.WriteLine("Введите длину массива: ");
+int lengthArr = Convert.ToInt32(Console.ReadLine());
+int[] arr = new int[lengthArr];
 
+FillArray(arr);
+PrintArray(arr);
+System.Console.WriteLine();
+Console.Write(SumOfOddElements(arr));
 
 int[] FillArray(int[] collection)
 {
-    int lenghtArr = collection.Length;    
-    for(int i = 0; i< lenghtArr; i++)
+    for (int i = 0; i < collection.Length; i++)
     {
-        collection[i] = new Random().Next(100, 1000);        
+        collection[i] = new Random().Next(0, 10);
     }
     return collection;
 }
 
 void PrintArray(int[] array)
 {
-    int i = 0;
-    while (i < array.Length - 1)
-    {
-        Console.Write($"{array[i]}" + ", ");
-        i++;
-    }
-    Console.Write($"{array[i]}");
+    for (int i = 0; i < array.Length; i++) { }
+    Console.Write(String.Join(",", array));
 }
 
 
 int SumOfOddElements(int[] numbers)
 {
     int result = 0;
-    for(int i = 0; i < numbers.Length; i++)
+    for (int i = 0; i < numbers.Length; i++)
     {
-        for(int j = 0; j < numbers.Length; j = j + 2)
+        if (i % 2 == 0)
         {
-            result = result + numbers[j];
+            result = result + numbers[i];
         }
     }
-    return result;    
+    return result;
 }
-
-int[] arr = new int[10];
-
-FillArray(arr);
-PrintArray(arr);
-System.Console.WriteLine();
-System.Console.WriteLine();
-Console.Write(SumOfOddElements(arr)); 

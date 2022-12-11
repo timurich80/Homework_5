@@ -4,6 +4,15 @@
 [3 7 22 2 78] -> 76 
 */
 
+Console.Clear();
+System.Console.WriteLine("Введите длину массива: ");
+int lengthArr = Convert.ToInt32(Console.ReadLine());
+int[] arr = new int[lengthArr];
+
+FillArray(arr);
+PrintArray(arr);
+Console.WriteLine();
+Console.Write("Разница между максимальным и минимальным элементов массива ->" + SumOfOddElements(arr)); 
 
 int[] FillArray(int[] collection)
 {
@@ -35,9 +44,3 @@ int SumOfOddElements(int[] numbers)
     return result;    
 }
 
-int[] arr = new int[10];
-
-FillArray(arr);
-PrintArray(arr);
-Console.WriteLine();
-Console.Write("Разница между максимальным и минимальным элементов массива ->" + SumOfOddElements(arr)); 
